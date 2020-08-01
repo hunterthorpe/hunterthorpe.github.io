@@ -1,0 +1,44 @@
+#btn-group {
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+.vertical {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.horizontal {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar {
+    padding: .8rem
+}
+.navbar-nav li {
+    padding-right: 20px;
+}
+.nav-link {
+    font-size:1.1em !important
+}
+
+.resume h5 {
+    font-weight: bold;
+    text-decoration: underline;
+}
+.resume h6 {
+    font-weight: bold;
+}
+
+.carousel-inner > .carousel-item > img { 
+    height: 600px; 
+}
+
+.waterpics {
+    text-align: centre;
+    padding:5%;
+}
