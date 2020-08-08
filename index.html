@@ -10,7 +10,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <link href="style.css" rel="stylesheet">
+    <link href="styleindex.css" rel="stylesheet">
     <title>Hunter Thorpe</title>
   </head>
   <body>
@@ -93,21 +93,36 @@
        <div class="row padding">
            <div class="col-md-4">
                <div class="card">
-                   <img class="card-img-top" src="img/world.png">
+                   <img class="card-img-top" src="img/xogrid.png">
                    <div class="card-body">
-                       <h4 class="card-title">Comparing Classifiers</h4>
-                       <p class="card-text">Comparing classification algorithms and feature engineering/selection using
-                        World Development Indicators and life expectancy data from the World Health Organization.
-                        <br><br>
-                        Libraries Used: Pandas, Numpy, sklearn, Statistics</p>
+                       <h4 class="card-title">Noughts and Crosses</h4>
+                       <p class="card-text">Noughts and Crosses game where player versus a computer.
+                           Page tracks game record including wins, losses and ties. Written in 
+                           html, css and javascript with jquery.
+                    </p>
 
                         <div class="btn-group">
-                            <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#world">See Project</a>
-                            <a href="https://github.com/hunterthorpe/comparing_classifiers" target="_blank" class="btn btn-default">See Code</a>
+                            <a href="xando.html" class="btn btn-primary" target="_blank">See Project</a>
+                            <a href="https://github.com/hunterthorpe/noughts_and_crosses" target="_blank" class="btn btn-default">See Code</a>
                         </div>
                    </div>
                </div>
            </div>
+
+           <div class="col-md-4">
+            <div class="card">
+                <img class="card-img-top" src="img/notepad.jpg">
+                <div class="card-body">
+                    <h4 class="card-title">Resource Tracker Web App</h4>
+                    <p class="card-text">Web applet that stores sources when researching.
+                        Created using HTML5, CSS3, Vanilla Javascript and Boostrap 4.</p>
+                     <div class="btn-group">
+                        <a href="sourcelist.html" target="_blank" class="btn btn-primary">See Project</a>
+                        <a href="https://github.com/hunterthorpe/resourcetracker" target="_blank" class="btn btn-default">See Code</a>
+                     </div>
+                </div>
+            </div>
+        </div>
 
         <div class="col-md-4">
             <div class="card">
@@ -125,40 +140,9 @@
                 </div>
             </div>
         </div>
-
-        <div class="col-md-4">
-            <div class="card">
-                <img class="card-img-top" src="img/notepad.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Resource Tracker Web App</h4>
-                    <p class="card-text">Web applet that stores sources when researching.
-                        Created using HTML5, CSS3, Vanilla Javascript and Boostrap 4.</p>
-                     <div class="btn-group">
-                        <a href="sourcelist.html" target="_blank" class="btn btn-primary">See Project</a>
-                        <a href="https://github.com/hunterthorpe/resourcetracker" target="_blank" class="btn btn-default">See Code</a>
-                     </div>
-                </div>
-            </div>
-        </div>
        </div>
                             <!--project pop up layer 1 ************************-->
-       <div id="world" class="collapse" style="background-color: lightgray;">
-            <br> 
-            <h1 style="padding-left:15%; padding-right:15%;">Comparing Classifiers</h1>
-            <p style="padding-left:15%; padding-right:15%;">
-            Part 1<br>
-            - Perform median imputation and scaling on each feature <br>
-            - Comparing classifaction accuracies between models trained with a 10 Nearest Neighbour, 5 Nearest Neighbour, and Decision Tree Classifer <br>
-            <br>
-            Part 2<br>
-            - Performing different methods of feature selection and engineering, including Kmeans clustering<br>
-            - Comparing relevant accuracies<br>
-            <br> See more at <a href="https://github.com/hunterthorpe/comparing_classifiers" target="_blank">github.com/hunterthorpe/comparing_classifiers</a>
-        </p> 
-        <br>
-        </div>
-        <br>
-
+       <br>
         <div id="tennis" class="collapse" style="background-color: lightgray;">
             <br> 
             <h1 style="padding-left:15%; padding-right:15%;">Tennis Webscraper</h1>
@@ -180,6 +164,42 @@
         <div class="row padding">
             <div class="col-md-4">
                 <div class="card">
+                    <img class="card-img-top" src="img/more.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Other Projects</h4>
+                        <p class="card-text"> - Deque and Topological sort implementation<br>
+                           - Hashtable and Character Trie implementation<br>
+                           - Text formatting C program<br>
+                           - Path finding C program<br>
+                           - And more
+                        </p>
+                         <div class="btn-group">
+                             <a href="https://github.com/hunterthorpe?tab=repositories" target="_blank" class="btn btn-primary">Github</a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <img class="card-img-top" src="img/world.png">
+                    <div class="card-body">
+                        <h4 class="card-title">Comparing Classifiers</h4>
+                        <p class="card-text">Comparing classification algorithms and feature engineering/selection using
+                         World Development Indicators and life expectancy data from the World Health Organization.
+                         <br><br>
+                         Libraries Used: Pandas, Numpy, sklearn, Statistics</p>
+ 
+                         <div class="btn-group">
+                             <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#world">See Project</a>
+                             <a href="https://github.com/hunterthorpe/comparing_classifiers" target="_blank" class="btn btn-default">See Code</a>
+                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
                     <img class="card-img-top" src="img/water.png">
                     <div class="card-body">
                         <h4 class="card-title">Water Analyser</h4>
@@ -194,41 +214,28 @@
                     </div>
                 </div>
             </div>
- 
-         <div class="col-md-4">
-             <div class="card">
-                 <img class="card-img-top" src="img/hash.png">
-                 <div class="card-body">
-                     <h4 class="card-title">Hash Table and Trie Implementations</h4>
-                     <p class="card-text">Linear probing hash table implementation and character level trie implementation in C.</p>
-                      <div class="btn-group">
-                          <a href="#" class="btn btn-primary" data-toggle="collapse" data-target="#hash">See Project</a>
-                          <a href="https://github.com/hunterthorpe/hashtable_and_character_trie" target="_blank" class="btn btn-default">See Code</a>
-                      </div>
-                 </div>
-             </div>
-         </div>
- 
-         <div class="col-md-4">
-             <div class="card">
-                 <img class="card-img-top" src="img/more.png">
-                 <div class="card-body">
-                     <h4 class="card-title">Other Projects</h4>
-                     <p class="card-text"> - Deque and Topological sort implementation<br>
-                        - Text formatting C program<br>
-                        - Path finding C program<br>
-                        - And more
-                     </p>
-                      <div class="btn-group">
-                          <a href="https://github.com/hunterthorpe?tab=repositories" class="btn btn-primary">Github</a>
-                      </div>
-                 </div>
-             </div>
-         </div>
+
  
         </div>
     </div>
                      <!--project pop up layer 2 ************************-->
+                     <br>
+        <div id="world" class="collapse" style="background-color: lightgray;">
+            <br>
+            <h1 style="padding-left:15%; padding-right:15%;">Comparing Classifiers</h1>
+            <p style="padding-left:15%; padding-right:15%;">
+                Dataset composed of World Development Indicators and life expectancy data from the World Health Organization.<br><br>
+                Part 1<br>
+                - Perform median imputation and scaling on each feature <br>
+                - Comparing classifaction accuracies between models trained with a 10 Nearest Neighbour, 5 Nearest Neighbour, and Decision Tree Classifer <br>
+                <br>
+                Part 2<br>
+                - Performing different methods of feature selection and engineering, including Kmeans clustering<br>
+                - Comparing relevant accuracies<br>
+                <br> See more at <a href="https://github.com/hunterthorpe/comparing_classifiers" target="_blank">github.com/hunterthorpe/comparing_classifiers</a>
+            </p> 
+            <br>
+        </div>
        <div id="water" class="collapse" style="background-color: lightgray;">
             <br> 
             <h1 style="padding-left:15%; padding-right:15%;">Water Analyser</h1>
@@ -292,7 +299,7 @@
                </div>
            </div>
 
-       
+        
 
         <div class="col-md-4">
             <div class="card">
@@ -323,47 +330,6 @@
         <h5>Profile</h5>
         <p>Enthusiastic and motivated 2nd year Bachelor of Science student at the 
             University of Melbourne preparing to double major in Data Science, and Computing and Software Systems.</p>
-        <br>
-        <h5>Education</h5>
-        <h6>The University of Melbourne – Bachelor of Science (2nd Year) . </h6>
-        <ul>
-            <li>Weighted Average Mark (WAM): <strong>78.00</strong></li>
-            <li>First Class Honors: Elements of Data Processing, Foundations of Computing, and Calculus 1</li>
-            <li>Second Class Honors: Foundations of Algorithms, Design of Algorithms, Foundations of Information Systems, and Probability for Statistics </li>
-            <li>Member of the Competitive Programming and Information Security Clubs</li>
-            <li><a href="https://github.com/hunterthorpe/resume" target="_blank">Click Here for Statement of results</a></li>
-        </ul>
-        <h6>St Bernard’s College – VCE: 94.95 ATAR</h6>
-        <br>
-        <h5>Experience</h5>
-        <h6>Greenhouse Pools and Spas: Sales Assistant. Dec 2018 – Current (20 months)</h6>
-        <ul>
-            <li>Responsible for water testing, data entry and management, making sales, store organization, and general admin</li>
-            <li>Developed Pool water testing and customer database program in an attempt to replace a previously used dated software</li>
-            <li>References: Store Directors- Fabio Marzella (fabiom@ghpools.com.au), and Merita Marzella (meritam@ghpools.com.au)</li>
-        </ul>
-        <br>
-        <h6>Mathstar Tutoring: Mathematics and English Tutor. Apr 2019 – Sep 2019 (6 months)</h6>
-        <ul>
-            <li>Tutored at a primary school and secondary school level</li>
-            <li>Reference: Manager- Sheryn Chen (info@mathstar.com.au)</li>
-        </ul>
-        <br>
-        <h6>McDonald’s Highpoint Kitchen Staff – 2016 Nov - 2018 Jan (14 months)</h6>
-        <ul>
-            <li>Excelled in a high pressure team environment </li>
-        </ul>
-        <br>
-        <h6>Walter and Eliza Hall Institute Work Experience- June 2016 (1 month)</h6>
-        <ul>
-            <li>Responsible for data entry, operating certain technical equipment and preparing a relevant report</li>
-        </ul>
-        <br>
-        <h6>NWMCA and EDFL Umpiring- Apr 2015 – Feb 2017 (22 months)</h6>
-        <ul>
-            <li>Officiated a variety of junior and senior, football and cricket matches</li>
-            <li>Developed skills in communication, decision making, cash handling and teamwork </li>
-        </ul>
         <br>
         <h5>Skills</h5>
         <div class="container-fluid">
@@ -411,6 +377,48 @@
      
             </div>
             <br>
+        <h5>Education</h5>
+        <h6>The University of Melbourne – Bachelor of Science (2nd Year) . </h6>
+        <ul>
+            <li>Weighted Average Mark (WAM): <strong>78.00</strong></li>
+            <li>First Class Honors: Elements of Data Processing, Foundations of Computing, and Calculus 1</li>
+            <li>Second Class Honors: Foundations of Algorithms, Design of Algorithms, Foundations of Information Systems, and Probability for Statistics </li>
+            <li>Member of the Competitive Programming and Information Security Clubs</li>
+            <li><a href="https://github.com/hunterthorpe/resume" target="_blank">Click Here for Statement of results</a></li>
+        </ul>
+        <h6>St Bernard’s College – VCE: 94.95 ATAR</h6>
+        <br>
+        <h5>Experience</h5>
+        <h6>Greenhouse Pools and Spas: Sales Assistant. Dec 2018 – Current (20 months)</h6>
+        <ul>
+            <li>Responsible for water testing, data entry and management, making sales, store organization, and general admin</li>
+            <li>Developed Pool water testing and customer database program in an attempt to replace a previously used dated software</li>
+            <li>References: Store Directors- Fabio Marzella (fabiom@ghpools.com.au), and Merita Marzella (meritam@ghpools.com.au)</li>
+        </ul>
+        <br>
+        <h6>Mathstar Tutoring: Mathematics and English Tutor. Apr 2019 – Sep 2019 (6 months)</h6>
+        <ul>
+            <li>Tutored at a primary school and secondary school level</li>
+            <li>Reference: Manager- Sheryn Chen (info@mathstar.com.au)</li>
+        </ul>
+        <br>
+        <h6>McDonald’s Highpoint Kitchen Staff – 2016 Nov - 2018 Jan (14 months)</h6>
+        <ul>
+            <li>Excelled in a high pressure team environment </li>
+        </ul>
+        <br>
+        <h6>Walter and Eliza Hall Institute Work Experience- June 2016 (1 month)</h6>
+        <ul>
+            <li>Responsible for data entry, operating certain technical equipment and preparing a relevant report</li>
+        </ul>
+        <br>
+        <h6>NWMCA and EDFL Umpiring- Apr 2015 – Feb 2017 (22 months)</h6>
+        <ul>
+            <li>Officiated a variety of junior and senior, football and cricket matches</li>
+            <li>Developed skills in communication, decision making, cash handling and teamwork </li>
+        </ul>
+        <br>
+
         <h5>Extracurricular Activities</h5>
         <ul>
             <li>Volunteer tutor at St Alban Community Centre 2017 (2 months)</li>
