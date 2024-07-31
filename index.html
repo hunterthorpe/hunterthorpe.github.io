@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Councel</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    
+</head>
+<body>
+    <div class="game-container">
+        <h1>Councel</h1>
+        <div class="input-container">
+            <label for="search">Search: </label>
+            <input type="text" id="search" placeholder="Enter an LGA name" />
+            <button id="submit-guess">Submit Guess</button>
+        </div>
+        
+        <div id="results-container">
+            <div class="result-header">
+                <div class="header-cell">LGA</div>
+                <div class="header-cell">Population</div>
+                <div class="header-cell">Median Income</div>
+                <div class="header-cell">Median House Price</div>
+                <div class="header-cell">Median Age</div>
+            </div>
+            <!-- Results will be dynamically inserted here -->
+        </div>
+    </div>
+    <script src="main.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+</body>
+</html>

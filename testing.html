@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Bar with Suggestions</title>
+    <style>
+        .suggestions {
+            border: 1px solid #ccc;
+            border-top: none;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background-color: white;
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .suggestion-item {
+            padding: 8px;
+            cursor: pointer;
+        }
+
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="searchInput" placeholder="Type to search...">
+    <div id="suggestions" class="suggestions"></div>
+
+    <script>
+        const dataList = ['Apple', 'Banana', 'Cherry', 'Date', 'Elderberry', 'Fig', 'Grape', 'Honeydew'];
+        const searchInput = document.getElementById('searchInput');
+        const suggestions = document.getElementById('suggestions');
+
+        searchInput.addEventListener('input', () => {
+            const query = searchInput.value.toLowerCase();
+            suggestions.innerHTML = '';
+            if (query) {
+                const filteredList = dataList.filter(item => item.toLowerCase().includes(query));
+                filteredList.forEach(item => {
+                    const div = document.createElement('div');
+                    div.textContent = item;
+                    div.classList.add('suggestion-item');
+                    div.addEventListener('click', () => {
+                        searchInput.value = item;
+                        suggestions.innerHTML = '';
+                    });
+                    suggestions.appendChild(div);
+                });
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!suggestions.contains(e.target) && e.target !== searchInput) {
+                suggestions.innerHTML = '';
+            }
+        });
+
+        searchInput.addEventListener('blur', () => {
+            const value = searchInput.value;
+            if (!dataList.includes(value)) {
+                alert('Please select a valid option from the list.');
+                searchInput.value = '';
+            }
+        });
+    </script>
+</body>
+</html>
