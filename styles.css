@@ -75,14 +75,24 @@ button:hover {
 
 .arrow-up {
     height: 1em; /* Match the height of the text */
-    content: url('images/green_arrow.png'); /* Replace with actual path */
+    content: url('images/green_arrow.png'); 
     vertical-align: middle;
 }
 
 .arrow-down {
     height: 1em; /* Match the height of the text */
-    content: url('images/red_arrow.png'); /* Replace with actual path */
+    content: url('images/red_arrow.png'); 
     vertical-align: middle;
+}
+
+.gold-star {
+    height: 1em; /* Match the height of the text */
+    content: url('images/gold_star.png'); 
+    vertical-align: middle;
+}
+
+.gold {
+    color: rgb(187, 187, 2);
 }
 
 .green {
