@@ -2,8 +2,17 @@
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+        // Add an event listener for the search input field to hide the warning on focus
+    document.getElementById('search').addEventListener('focus', function() {
+        const warningMessage = document.getElementById('warning-message');
+        warningMessage.classList.add('d-none');
+    });
+
     const suburbList = Object.keys(salCodes)
-    const MELBOURNE_COORD = turf.point([-37.814251, 144.963164])
+    const MELBOURNE_COORD = turf.point([144.963164, -37.814251])
+    var guessList = []
+    var gameWon = false
 
     $(function() {
     
@@ -22,9 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("Hidden suburb name: " + hiddenSuburbName)
         hiddenSuburb = await getSuburbStatistics(salCodes[hiddenSuburbName], await getCoordinates(hiddenSuburbName))
     
-        const coordinates = await getCoordinates(hiddenSuburbName)
-        hiddenSuburbLat = coordinates.latitude
-        hiddenSuburbLon = coordinates.longitude
     }
     getHiddenSuburb()
 
@@ -32,14 +38,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const submitButton = document.getElementById('submit-guess');
     const resultsContainer = document.getElementById('results-container');
+    const warningMessage = document.getElementById('warning-message');
+    const successMessage = document.getElementById('success-message');
 
     submitButton.addEventListener('click', () => {
         const suburbGuess = document.getElementById('search').value.trim();
         if (suburbGuess == hiddenSuburbName) {
-            alert('You Won!')
+            // correct guess
+            gameWon = true
+            handleGuess(suburbGuess);
+            guessList.push(suburbGuess)
+            successMessage.textContent = `Congratulations! You guessed the hidden suburb in ${guessList.length} attempts!`;
+            successMessage.classList.remove('d-none');
+        } else if (guessList.map(item => item.toLowerCase()).includes(suburbGuess.toLowerCase())) {
+            // previously guessed suburb
+            warningMessage.classList.remove('d-none');
         } else if (suburbList.map(item => item.toLowerCase()).includes(suburbGuess.toLowerCase())) {
+            // new suburb guess
+            guessList.push(suburbGuess)
             handleGuess(suburbGuess);
         } else {
+            // invalid suburb guessed
             alert('Please select a valid option from the list.');
         }
     });
@@ -51,16 +70,17 @@ document.addEventListener('DOMContentLoaded', () => {
         displayResults(suburbName, guessData);
     }
 
+    const createCell = (content, className = '') => {
+        const cell = document.createElement('div');
+        cell.className = `result-cell ${className}`;
+        cell.innerHTML = content;
+        console.log(content)
+        return cell;
+    };
+
     function displayResults(suburbName, suburbData) {
         const resultRow = document.createElement('div');
         resultRow.className = 'result-row';
-
-        const createCell = (content, className = '') => {
-            const cell = document.createElement('div');
-            cell.className = `result-cell ${className}`;
-            cell.innerHTML = content;
-            return cell;
-        };
 
         resultRow.appendChild(createCell(suburbName));
 
@@ -73,14 +93,22 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             
             if (key == "cbdDirection") {
-                resultRow.appendChild(createCell(`${suburbData[key] + unit}`, ''));
-            } else {
-                if (Number(suburbData[key]) > Number(hiddenSuburb[key])) {
-                    resultRow.appendChild(createCell(`${suburbData[key] + unit} <span class=arrow-down></span>`, 'red'));
-                } else if (Number(suburbData[key]) == Number(hiddenSuburb[key])) {
+                console.log(suburbData[key])
+                if (suburbData[key] == hiddenSuburb[key]) {
                     resultRow.appendChild(createCell(`${suburbData[key] + unit} <span class=gold-star></span>`, 'gold'));
                 } else {
-                    resultRow.appendChild(createCell(`${suburbData[key] + unit} <span class=arrow-up></span>`, 'green'));
+                    resultRow.appendChild(createCell(`${suburbData[key] + unit}`, ''));
+                }
+            } else {
+                if (Number(suburbData[key]) > Number(hiddenSuburb[key])) {
+                    // guess data point for this value is less than hidden suburb
+                    resultRow.appendChild(createCell(`${formatNumber(suburbData[key], unit)} <span class=arrow-down></span>`, 'red'));
+                } else if (Number(suburbData[key]) == Number(hiddenSuburb[key])) {
+                    // guess data point for this value is equal than hidden suburb
+                    resultRow.appendChild(createCell(`${formatNumber(suburbData[key], unit)} <span class=gold-star></span>`, 'gold'));
+                } else {
+                    // guess data point for this value is greater than hidden suburb
+                    resultRow.appendChild(createCell(`${formatNumber(suburbData[key], unit)} <span class=arrow-up></span>`, 'green'));
                 }
             }
         }
@@ -91,6 +119,10 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             resultsContainer.appendChild(resultRow);
         }
+    }
+
+    function formatNumber(string, unit) {
+        return Number(string).toLocaleString() + unit
     }
 
 
@@ -174,14 +206,17 @@ document.addEventListener('DOMContentLoaded', () => {
             })
         console.log(data)
         const result = data.find(item => item.display_name.includes('Australia'));
-        return turf.point([result.lat, result.lon])
+        return turf.point([result.lon, result.lat])
     }
 
 });
 
 const getDirectionArrow = (bearing) => {
-    if (bearing < 0 ) bearing = 360 + bearing; // Ensure bearing is within valid range
-  
+    console.log("bearing " + bearing)
+    if (bearing < 0) {
+        bearing += 360
+    }
+    console.log("bearing " + bearing)
     if (bearing >= 337.5 || bearing < 22.5) return "⬆️";  // N
     if (bearing >= 22.5 && bearing < 67.5) return "↗️";   // NE
     if (bearing >= 67.5 && bearing < 112.5) return "➡️";  // E

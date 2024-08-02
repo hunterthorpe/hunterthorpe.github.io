@@ -27,7 +27,8 @@ h1 {
 .input-container {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 #lga-input {
@@ -65,8 +66,11 @@ button:hover {
 }
 
 .result-cell {
+    display: flex;
     flex: 1;
     text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .result-cell span {
@@ -116,3 +120,18 @@ button:hover {
     flex: 1;
     text-align: center;
 }
+
+
+.info-icon {
+    font-size: 64px;
+    cursor: pointer;
+    border: none;
+    background: none;
+}
+
+.header-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+}
+
