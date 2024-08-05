@@ -95,6 +95,12 @@ button:hover {
     vertical-align: middle;
 }
 
+.screenshot {
+    width: 95%;
+    content: url('images/Screenshot.jpg'); 
+    vertical-align: middle;
+}
+
 .gold {
     color: rgb(187, 187, 2);
 }
@@ -135,3 +141,17 @@ button:hover {
     justify-content: space-between; 
 }
 
+.loading-row {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.modal-footer-text {
+    justify-content: left;
+}
+
+.modal-footer {
+    justify-content: left;
+}

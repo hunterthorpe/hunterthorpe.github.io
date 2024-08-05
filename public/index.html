@@ -23,15 +23,23 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Information</h5>
+                        <h5 class="modal-title">How To Play</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Your informational text goes here.</p>
+                        <p>Surburble Melbourne is a worlde-esque game that involves guessing a specific Melbourne suburb that refreshes each day.</p>
+                        <p>Each guess is accompanied by some demographic and geographic data for that suburb, as well as a comparison to the hidden/target suburb based on these stats.</p>
+                        <span class="screenshot"></span>
+                        <p>In this example, the hidden suburb is less than 7km from the CBD in a south-west direction, has a population of more than 9,368, 
+                            a median age less than 38, a median income higher than 70k, and a median rent of $421.</p>   
                     </div>
-                    <div class="modal-footer">
+                    <div class="modal-footer d-flex justify-content-between align-items-center">
+                        <p class="mb-0">Data sourced from <a href="http://www.openstreetmap.org/" target="_blank">openstreetmap.org</a> and the 
+                            <a href="https://www.abs.gov.au/statistics/people/population/population-census/2021" target="_blank">2021 ABS census</a>.</p>
+                        <p class="mb-0"><a href="https://github.com/hunterthorpe/suburb-council-game" target="_blank">Source code</a>
+                        and <a href="http://www.google.com" target="_blank">personal website.</a></p>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -85,6 +93,7 @@
                 <div class="header-cell">Median Income</div>
                 <div class="header-cell">Median Rent</div>
             </div>
+            <div id="loading-message" class="loading-row d-none">🔄⌛</div>
             <!-- Results will be dynamically inserted here -->
         </div>
     </div>
@@ -93,7 +102,12 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
-    <script src="main.js"></script>
+    <script src="../src/main.js" type="module"></script>
+    <script src="../src/main.js" type="module"></script>
+    <script src="../src/abs_data.js" type="module"></script>
+    <script src="../src/display_results.js" type="module"></script>
+    <script src="../src/game.js" type="module"></script>
+    <script src="../src/suburb_codes.js" type="module"></script>
 
 </body>
 </html>
