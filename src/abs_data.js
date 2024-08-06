@@ -1,5 +1,4 @@
 export async function getXmlForUrl(url) {
-    console.log(url)
     const data = await fetch(url)
         .then(response => {
             if (!response.ok) {
@@ -28,7 +27,6 @@ export function getMedianDataFromXml(xmlDoc, suburbCode, statisticCode) {
         generic:Obs/generic:ObsDimension[@id='TIME_PERIOD' and @value='2021']
     ]/generic:Obs/generic:ObsValue/@value`;
     const stringValue = xmlDoc.evaluate(xpathExpression, xmlDoc, nsResolver, XPathResult.STRING_TYPE, null).stringValue;      
-    console.log(stringValue)
     if (stringValue != '') {
         return stringValue;
     } 
@@ -43,7 +41,6 @@ export function getPopulationDataFromXml(xmlDoc, suburbCode, statisticCode, sexC
             generic:Obs/generic:ObsDimension[@id='TIME_PERIOD' and @value='2021']
         ]/generic:Obs/generic:ObsValue/@value`;
     const stringValue = xmlDoc.evaluate(xpathExpression, xmlDoc, nsResolver, XPathResult.STRING_TYPE, null).stringValue;      
-    console.log(stringValue)
     if (stringValue != '') {
         return stringValue;
     } 

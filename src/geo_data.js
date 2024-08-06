@@ -7,18 +7,16 @@ export async function getCoordinates(cityName) {
             }
             return response.json(); // Parse the JSON data from the response
         })
-    console.log(data)
     const result = data.find(item => item.display_name.includes('Australia'));
     return turf.point([result.lon, result.lat])
 }
 
 
 export const getDirectionArrow = (bearing) => {
-    console.log("bearing " + bearing)
     if (bearing < 0) {
         bearing += 360
     }
-    console.log("bearing " + bearing)
+
     if (bearing >= 337.5 || bearing < 22.5) return "⬆️";  // N
     if (bearing >= 22.5 && bearing < 67.5) return "↗️";   // NE
     if (bearing >= 67.5 && bearing < 112.5) return "➡️";  // E

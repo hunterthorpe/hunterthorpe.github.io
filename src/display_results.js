@@ -52,6 +52,5 @@ const createCell = (content, className = '') => {
     const cell = document.createElement('div');
     cell.className = `result-cell ${className}`;
     cell.innerHTML = content;
-    console.log(content)
     return cell;
 };

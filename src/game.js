@@ -3,20 +3,21 @@ import { getXmlForUrl, getMedianDataFromXml, getPopulationDataFromXml } from "./
 import { getCoordinates, getDirectionArrow } from "./geo_data.js";
 import { warningMessage, successMessage, loadingMessage } from "./main.js";
 import { displayResults } from "./display_results.js";
+import { addStat } from "./user_stats.js";
 
 // Game variables and constants
 export const suburbList = Object.keys(suburbCodes)
 const MELBOURNE_COORD = turf.point([144.963164, -37.814251])
 var guessList = []
 var gameWon = false
-var hiddenSuburbName
-export var hiddenSuburb;
+export let hiddenSuburbName;
+export let hiddenSuburb;
 
-async function getHiddenSuburb() {
+export async function initializeHiddenSuburb() {
     hiddenSuburbName = suburbList[Math.floor(Math.random() * (suburbList.length))];
+    hiddenSuburb = await getSuburbStatistics(suburbCodes[hiddenSuburbName], await getCoordinates(hiddenSuburbName));
     console.log("Hidden suburb name: " + hiddenSuburbName);
-    return await getSuburbStatistics(suburbCodes[hiddenSuburbName], await getCoordinates(hiddenSuburbName));
-};
+}
 
 export async function processGuess(searchInput) {
     const suburbGuess = searchInput.value.trim();
@@ -35,6 +36,7 @@ export async function processGuess(searchInput) {
         
         if (suburbGuess == hiddenSuburbName) {
             gameWon = true;
+            addStat(guessList.length);
             successMessage.textContent = `Congratulations! You guessed the hidden suburb in ${guessList.length} attempts!`;
             successMessage.classList.remove('d-none');
         }

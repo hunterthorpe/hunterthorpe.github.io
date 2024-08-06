@@ -30,7 +30,9 @@
                     </div>
                     <div class="modal-body">
                         <p>Surburble Melbourne is a worlde-esque game that involves guessing a specific Melbourne suburb that refreshes each day.</p>
-                        <p>Each guess is accompanied by some demographic and geographic data for that suburb, as well as a comparison to the hidden/target suburb based on these stats.</p>
+                        <p>Each guess is accompanied by some demographic and geographic data for that suburb, as well as a comparison to the hidden/target suburb based on these stats.
+                            A <span class="gold-star"></span> means the hidden suburb has the same value for that category.
+                        </p>
                         <span class="screenshot"></span>
                         <p>In this example, the hidden suburb is less than 7km from the CBD in a south-west direction, has a population of more than 9,368, 
                             a median age less than 38, a median income higher than 70k, and a median rent of $421.</p>   
@@ -50,13 +52,14 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title">Stats</h5>
+                        <h5 class="modal-title">Your Stats</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Your statistics text goes here.</p>
+                        <canvas id="guessChart" width="400" height="200"></canvas>
+                        <p id="guessSummary" class="mt-3"></p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -102,12 +105,13 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/@turf/turf/turf.min.js"></script>
-    <script src="../src/main.js" type="module"></script>
-    <script src="../src/main.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="../src/abs_data.js" type="module"></script>
+    <script src="../src/geo_data.js" type="module"></script>
     <script src="../src/display_results.js" type="module"></script>
     <script src="../src/game.js" type="module"></script>
     <script src="../src/suburb_codes.js" type="module"></script>
+    <script src="../src/main.js" type="module"></script>
 
 </body>
 </html>
